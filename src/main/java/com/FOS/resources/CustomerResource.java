@@ -75,7 +75,7 @@ public class CustomerResource {
     @Path("/{id}/{isActive}")
     @UnitOfWork
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response updateCustomer(@PathParam("id") long id, @PathParam("isActive") boolean isActive)
+    public Response updateIsActive(@PathParam("id") long id, @PathParam("isActive") boolean isActive)
     {
         Response received=customerDAO.updateIsActive(id,isActive);
         return received;

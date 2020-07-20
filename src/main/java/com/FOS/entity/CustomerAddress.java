@@ -8,16 +8,20 @@ import java.util.Set;
 
 @Entity
 @Table(name="customeraddress")
+@NamedNativeQueries({
+        @NamedNativeQuery(name = "com.FOS.entity.CustomerAddress.getId",
+                query = "select * from CustomerAddress c where id=:id"),
+})
 
 @DynamicUpdate
 public class CustomerAddress implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    private double latitude;
-    private double longitude;
+    private Double latitude;
+    private Double longitude;
     private String address;
-    private int pincode;
+    private Integer pincode;
     private boolean isActive;
 
     @ManyToOne(cascade=CascadeType.MERGE,fetch = FetchType.EAGER)
@@ -31,18 +35,18 @@ public class CustomerAddress implements Serializable {
     }
 
     public long getId(){return id;}
-    public double getLatitude(){return latitude;}
-    public double getLongitude(){return longitude;}
+    public Double getLatitude(){return latitude;}
+    public Double getLongitude(){return longitude;}
     public String getAddress(){return address;}
-    public int getPincode(){return pincode;}
+    public Integer getPincode(){return pincode;}
     public boolean getIsActive(){return isActive;}
     public Customer getCustomer(){return customer;}
 
     public void setId(long id){this.id=id;}
-    public void setLatitude(double latitude){this.latitude=latitude;}
-    public void setLongitude(double longitude){this.longitude=longitude;}
+    public void setLatitude(Double latitude){this.latitude=latitude;}
+    public void setLongitude(Double longitude){this.longitude=longitude;}
     public void setAddress(String address){this.address=address;}
-    public void setPincode(int pincode){this.pincode=pincode;}
+    public void setPincode(Integer pincode){this.pincode=pincode;}
     public void setIsActive(boolean isActive){this.isActive=isActive;}
     public void setCustomer(Customer customer){this.customer=customer;}
 

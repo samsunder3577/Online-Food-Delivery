@@ -68,7 +68,7 @@ public class CustomerDAO extends AbstractDAO<Customer> {
             {
                 oldCustomer.setLastName(customer.getLastName());
             }
-            if(customer.getMobile()!=0)
+            if(customer.getMobile()!=null)
             {
                 oldCustomer.setMobile(customer.getMobile());
             }

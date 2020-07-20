@@ -29,7 +29,7 @@ public class Customer implements Serializable {
     private long id;
     private String firstName;
     private String lastName;
-    private long mobile;
+    private Long mobile;
     private String emailID;
     private boolean isActive;
 
@@ -43,7 +43,7 @@ public class Customer implements Serializable {
     public long getId() { return id; }
     public String getFirstName() { return firstName; }
     public String getLastName() { return lastName; }
-    public long getMobile() { return mobile;}
+    public Long getMobile() { return mobile;}
     public String getEmailID(){ return emailID;}
     public boolean getIsActive(){ return isActive;}
 
@@ -52,7 +52,7 @@ public class Customer implements Serializable {
     public void setId(long id) { this.id= id; }
     public void setFirstName(String firstName) { this.firstName=firstName; }
     public void setLastName(String lastName) { this.lastName=lastName; }
-    public void setMobile(long mobile) { this.mobile=mobile;}
+    public void setMobile(Long mobile) { this.mobile=mobile;}
     public void setEmailID(String emailID){ this.emailID=emailID;}
     public void setIsActive(boolean isActive) { this.isActive=isActive;}
 }

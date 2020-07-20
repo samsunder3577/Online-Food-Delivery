@@ -20,6 +20,7 @@ public class CustomerAddressResource {
         this.customerAddressDAO=customerAddressDAO;
     }
 
+    //Add Customer Address
     @POST
     @UnitOfWork
     @Consumes(MediaType.APPLICATION_JSON)
@@ -29,7 +30,8 @@ public class CustomerAddressResource {
         Response received=customerAddressDAO.addCustomerAddress(customerID,customerAddress);
         return received;
     }
-    //Get Customers By Id
+
+    //Get CustomerAddress By Id
     @GET
     @Path("/{id}")
     @UnitOfWork
@@ -37,6 +39,29 @@ public class CustomerAddressResource {
 
 
         return customerAddressDAO.findById(id.get(),customerID);
+    }
+
+    //Update Customer Address
+    @PUT
+    @Path("/{id}")
+    @UnitOfWork
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response updateCustomerAddress(@PathParam("id") long id, CustomerAddress customerAddress)
+    {
+        customerAddress.setId(id);
+        Response received=customerAddressDAO.updateCustomerAddress(id,customerAddress);
+        return received;
+    }
+
+    //Update IsActive
+    @PUT
+    @Path("/{id}/{isActive}")
+    @UnitOfWork
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response updateIsActive(@PathParam("id") long id, @PathParam("isActive") boolean isActive)
+    {
+        Response received=customerAddressDAO.updateIsActive(id,isActive);
+        return received;
     }
 
 }
