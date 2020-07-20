@@ -58,6 +58,17 @@ public class DeliveryPartnerResource {
         return received;
     }
 
+    //Update IsActive
+    @PUT
+    @Path("/{id}/{isActive}")
+    @UnitOfWork
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response updateIsActive(@PathParam("id") long id, @PathParam("isActive") boolean isActive)
+    {
+        Response received=DeliveryPartnerDAO.updateIsActive(id,isActive);
+        return received;
+    }
+
 
 }
 
