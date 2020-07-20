@@ -48,6 +48,7 @@ public class DeliveryPartner implements Serializable {
     public boolean getIsActive(){ return isActive;}
     public boolean getIsAvailable(){ return isAvailable;}
 
+    public void setId(long id) { this.id= id; }
     public void setFirstName(String firstName) { this.firstName=firstName; }
     public void setLastName(String lastName) { this.lastName=lastName; }
     public void setMobile(Long mobile) { this.mobile=mobile;}

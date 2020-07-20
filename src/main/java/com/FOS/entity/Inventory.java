@@ -8,6 +8,10 @@ import java.io.Serializable;
 @Entity
 @Table(name = "inventory")
 @DynamicUpdate
+@NamedNativeQueries({
+        @NamedNativeQuery(name = "com.FOS.entity.Inventory.getId",
+                query = "select * from Inventory c where id=:id"),
+})
 public class Inventory implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
